@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "kysely-codegen": "kysely-codegen --camel-case --out-file src/kysely/types.ts",
-        "kysely": "kysely",
+        "kysely": "kysely -c src/kysely/config.ts",
         "dev": "tsx watch src/index.ts",
         "test": "vitest"
     },

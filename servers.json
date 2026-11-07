@@ -1,0 +1,14 @@
+{
+    "Servers": {
+        "1": {
+            "Name": "bhavcopy",
+            "Group": "Servers",
+            "Host": "postgres",
+            "Port": 5432,
+            "MaintenanceDB": "bhavcopy",
+            "Username": "user",
+            "SSLMode": "prefer",
+            "PassFile": "/pgpass"
+        }
+    }
+}
