@@ -6,8 +6,13 @@
     "scripts": {
         "kysely-codegen": "kysely-codegen --camel-case --out-file src/kysely/types.ts",
         "kysely": "kysely -c src/kysely/config.ts",
-        "dev": "tsx watch src/index.ts",
-        "test": "vitest"
+        "dev": "tsx watch src/app.ts",
+        "build": "tsc --noEmit && tsup src/app.ts --format esm --target esnext --clean",
+        "start": "node dist/app.js",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "typecheck": "tsc --noEmit",
+        "typecheck:watch": "tsc --noEmit --watch"
     },
     "repository": {
         "type": "git",
@@ -22,17 +27,21 @@
     },
     "homepage": "https://github.com/shibisuriya/bhavcopy-scraper#readme",
     "devDependencies": {
+        "@types/express": "^5.0.6",
         "@types/node": "^26.6.6",
         "@types/pg": "^8.23.1",
         "kysely-codegen": "^0.20.0",
         "kysely-ctl": "^0.22.0",
+        "tsup": "^9.0.0",
         "tsx": "^4.23.15",
         "typescript": "^7.0.2",
         "vitest": "^5.1.0"
     },
     "dependencies": {
         "axios": "^1.21.0",
+        "date-fns": "^4.4.0",
         "effect": "^4.1.2",
+        "express": "^5.3.0",
         "kysely": "^0.29.8",
         "pg": "^8.23.1",
         "zod": "^4.6.7"
